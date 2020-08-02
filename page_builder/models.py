@@ -39,7 +39,7 @@ class Page(models.Model):
         verbose_name = _("Page")
         verbose_name_plural = _("Pages")
         ordering = ("title",)
-        #order_with_respect_to = "parent"
+        # order_with_respect_to = "parent"
 
     def __str__(self):
         return self.title
@@ -133,4 +133,3 @@ class Page(models.Model):
         page_url = reverse("page", kwargs={"slug": self.slug})
         resolved_view = resolve(page_url)[0]
         return resolved_view != PageView
-
